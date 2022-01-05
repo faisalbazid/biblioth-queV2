@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brief2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="case" id="noprint">
+
+    <div class="title">
+     <h4> Gestion d'ouvrages dans une bibliothèque</h4>
+    </div>
+
+ <div class="form">
+       <div class="inputfield">
+          <label>Titre d'ouvrage:</label>
+          <input type="text" id="titre" maxlength="30" >
+       </div> 
+
+        <div class="inputfield">
+          <label>Auteur d'ouvrage:</label>
+          <input type="text" maxlength="30" id="auteur" >
+       </div> 
+
+       <div class="inputfield" >
+        <label>Prix:</label>
+        <input type="number" min="0" id="prix" placeholder="$">
+     </div> 
+
+       <div class="inputfield">
+          <label>Date de publication:</label>
+          <input type="date" max="2022-01-04" min="1900-01-01" id="date" >
+       </div>
+
+       <div class="inputfield">
+        <label>Email:</label>
+        <input type="text"  id="email" >
+     </div>
+
+       <div class="list">
+        <label class="onlyhadlabel">La langue:</label>
+
+        <select id="lang"> 
+        <option value="" hidden>Choose here</option>
+        <option value='anglais'  id='ang'>Anglais</option>
+        <option value='Francais' id='fra'>Francais</option>
+        <option value='Arabe'    id='ara'>Arabe</option>
+        </select>
+
+        </div>
+
+        
+
+
+        <div id="inputRadio">
+        <label class="onlyhadlabel">Type d'ouvrage:</label>
+
+        <div class="autrelabel">
+        <label>Roman</label>
+        <input type="radio" name="typeO" value="Roman" checked>
+        </div>
+
+        <div class="autrelabel">
+        <label> Essai</label>
+        <input type="radio" name="typeO" value="Essai"   >
+        </div>
+
+      <div class="autrelabel">
+        <label>Bd Desinée</label>
+        <input type="radio" name="typeO" value="Bande-Dessinée"  >
+      </div>
+        
+     </div> 
+
+
+        <div class="inputfield">
+        <input type="button" value="AJOUT D'UN OUVRAGE " id="btn" onclick="AddTableRow()" >
+        </div>
+        <div class="inputfield">
+          <input type="button" value="MODIFICATION D'UN OUVRAGE" id="btn"  onclick="EditTableSelectedRow();">
+          </div>
+          <div class="inputfield">
+            <input type="button" value="SUPPRESSION D'UN OUVRAGE" id="btn" onclick="document.getElementById('modal').style.display='block';document.getElementById('table').style.display='block';">   
+            </div>
+            <div class="inputfield">
+              <button id="btn" onclick="sortTable()">Sort</button>   
+              </div>
+            
+</div>
+
+</main>
+  
+    
+
+<section class="tableaux">
+  
+    <table id="table" >
+
+    <thead>
+      
+      <tr>
+        <th >Titre </th>
+        <th>Auteur</th>
+        <th>Prix</th>
+        <th>Date</th>
+        <th>Email</th>
+        <th>Langue</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td></td>
+      </tr>
+    </tbody>
+
+  </table>
+</section>
+
+
+
+<section id="modal" >
+  
+
+
+    <span class="close"  onclick="document.getElementById('modal').style.display='none'" > &times; </span>
+    <h1>Delete l'ouvrage</h1>
+    <p>Are you sure you want to delete l'ouvrage?</p>
+    <div class="twobtn">
+      <button type="button" onclick="document.getElementById('modal').style.display='none'" class="cancel">Cancel</button>
+      <button type="button" onclick="DelTableSelectdRow();document.getElementById('modal').style.display='none';" class="delete"> Delete </button>
+    </div>
+
+ 
+ 
+
+</section>
+
+
+  <div class="inputfield2" id="noprint">
+    <button id="print" onclick="Print()">Print</button>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>    
+<script src="script.js"></script>
+
+</body>

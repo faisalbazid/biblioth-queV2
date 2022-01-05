@@ -111,16 +111,13 @@ function checkEmptyInput()
         console.log("The Date is valid")
         }
 
-        else {
-        alert("The Date is Not Valid");
-
         }
 
-        }
+        
 
             function emailCheck() {
 
-            email =  document.getElementById("email").value;
+            
 
             let emailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
             let checkEmail = document.getElementById("email").value;
@@ -128,9 +125,10 @@ function checkEmptyInput()
 
             if(validate == true) {
             console.log("Email is valid")
+            return true;
 
             } else {
-            alert("Email is not valid")    
+            alert("Email is not valid");    
             }
 
             }
@@ -174,7 +172,7 @@ function checkEmptyInput()
 
 function AddTableRow(){
    
-    if(!checkEmptyInput()){
+    if(!checkEmptyInput() && emailCheck()){
    var newRow = table.insertRow(table.length);
 
     var cell1 = newRow.insertCell(0);
@@ -205,7 +203,7 @@ function AddTableRow(){
     showAlert(Ouvrage);
     prixCheck();
     dateCheck();
-    emailCheck();
+    // emailCheck();
     localstorage();
     }
 

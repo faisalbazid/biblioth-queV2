@@ -1,1 +1,1 @@
-# bibliothqueV2
+# https://faisalbazid.github.io/biblioth-queV2/
